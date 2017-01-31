@@ -9,23 +9,17 @@
 import UIKit
 
 class PostsTableViewController: UITableViewController {
-    var userPosts:User?
+    var userPosts:Post?
     var allUserPosts = [Post]()
     var postIdentifier: Post?
-    var detailUserPost: User?
+    var detailUserPost: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       UserController.getPosts((postIdentifier?.userID)!) { (posts) in
+       UserController.getPosts((detailUserPost)!) { (posts) in
         self.allUserPosts = posts
         self.tableView.reloadData()
         }
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source

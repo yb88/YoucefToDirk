@@ -9,9 +9,12 @@
 import UIKit
 
 class UsersTableViewController: UITableViewController {
+    
+
+    @IBOutlet weak var label: UILabel!
 
     var usersList = [User]()
-    var addressList = [Address]()
+    var valueToPass: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +27,8 @@ class UsersTableViewController: UITableViewController {
             }
         }
        
+    }
+    override func viewWillAppear(_ animated: Bool) {
     }
 
     
@@ -43,25 +48,33 @@ class UsersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         let user = usersList[indexPath.row]
-        cell.textLabel?.text = user.username
+        
+        // i should have done with custom cell instead of using the bang operator each time to be able to perform safely
+        cell.textLabel?.text = (user.username + " " + " " + user.lat! + " " + user.lng!)
+        cell.detailTextLabel?.text = (user.street! + " " + user.suite! + " " + user.zipcode! + " " + user.city!)
         return cell
     }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let indexPath = tableView.indexPathForSelectedRow
-        let currentCell = tableView.cellForRow(at: indexPath!)! as UITableViewCell
-        
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let indexPath = tableView.indexPathForSelectedRow?.row
+//        let currentCell = usersList[indexPath!].id
+//        valueToPass = currentCell
+//        performSegue(withIdentifier: "showUserPosts", sender: self)
+//        
+//        
+//    }
+
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showUserPosts" {
-            guard let cell = sender as? UITableViewCell else { return }
+//            guard let cell = sender as? UITableViewCell else { return }
             let detailViewController = segue.destination as! PostsTableViewController
-            let indexPath = self.tableView.indexPath(for: cell)!
-            let userTopost = self.usersList[indexPath.row]
-            detailViewController.detailUserPost = userTopost
+            let indexPath = self.tableView.indexPathForSelectedRow
+             let userTopost = self.usersList[(indexPath?.row)!].id
+            detailViewController.detailUserPost? = "\(userTopost)"
             
         }
     }
+
 
 }

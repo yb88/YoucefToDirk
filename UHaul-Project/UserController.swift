@@ -21,7 +21,6 @@ class UserController {
             }
             if let usersArray = json as? [Any] {
                 var users: [User] = []
-                var posts: [Post] = []
                 for userDictionary in usersArray {
                     if let newUser = User(jsonDictionary: userDictionary as! [String : AnyObject]) {
                         users.append(newUser)
@@ -36,7 +35,7 @@ class UserController {
             
         }
     }
-    static func getPosts(_ userId: Int,completion: @escaping(_ posts: [Post]) -> Void) {
+    static func getPosts(_ userId: String,completion: @escaping(_ posts: [Post]) -> Void) {
         let url = NetworkController.searchByUserID(userId)
         NetworkController.dataAtURL(url: url as NSURL) { (data) in
             guard let data = data else {return}
@@ -50,6 +49,8 @@ class UserController {
                     if let post = Post(jsonDictionary: postDictionary as! [String : AnyObject]) {
                         posts.append(post)
                     }
+                    
+                    
                 }
                 completion(posts)
             }
