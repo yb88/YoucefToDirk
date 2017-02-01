@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -58,7 +57,7 @@
             </objects>
             <point key="canvasLocation" x="1063.2" y="145.27736131934034"/>
         </scene>
-        <!--Posts Table View Controller-->
+        <!--Title-->
         <scene sceneID="bgf-9U-kNv">
             <objects>
                 <tableViewController id="tof-aH-PQK" customClass="PostsTableViewController" customModule="UHaul_Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -100,15 +99,20 @@
                             <outlet property="delegate" destination="tof-aH-PQK" id="oAj-yV-i8m"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="6MO-AI-HBg"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Title" id="PWg-zb-4vx"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJT-UG-niF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1757.5999999999999" y="144.3778110944528"/>
         </scene>
-        <!--View Controller-->
+        <!--View And Add Post View Controller-->
         <scene sceneID="jZB-pS-83n">
             <objects>
-                <viewController id="5RI-45-goI" sceneMemberID="viewController">
+                <viewController id="5RI-45-goI" customClass="ViewAndAddPostViewController" customModule="UHaul_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OeE-tt-ZPZ"/>
                         <viewControllerLayoutGuide type="bottom" id="lfA-3V-NTR"/>
@@ -117,31 +121,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e7v-Ey-Rvm">
-                                <rect key="frame" x="46" y="198" width="283" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sxs-Sp-DMn">
-                                <rect key="frame" x="46" y="255" width="283" height="142"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sS-YL-U0f">
+                                <rect key="frame" x="124" y="318" width="127" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="142" id="2L1-hC-Hqo"/>
+                                    <constraint firstAttribute="width" constant="127" id="7bI-JO-5Ul"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <state key="normal" title="Add Post"/>
+                                <connections>
+                                    <action selector="addPostButtonTapped:" destination="5RI-45-goI" eventType="touchUpInside" id="Eih-fr-mvX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sxs-Sp-DMn" firstAttribute="top" secondItem="e7v-Ey-Rvm" secondAttribute="bottom" constant="27" id="4PL-iB-O30"/>
-                            <constraint firstItem="sxs-Sp-DMn" firstAttribute="leading" secondItem="ahX-Av-IfB" secondAttribute="leadingMargin" constant="30" id="7yd-jK-w3N"/>
-                            <constraint firstItem="sxs-Sp-DMn" firstAttribute="trailing" secondItem="e7v-Ey-Rvm" secondAttribute="trailing" id="Cbh-Vv-iqr"/>
-                            <constraint firstItem="lfA-3V-NTR" firstAttribute="top" secondItem="sxs-Sp-DMn" secondAttribute="bottom" constant="270" id="MaE-k8-mIp"/>
-                            <constraint firstItem="sxs-Sp-DMn" firstAttribute="leading" secondItem="e7v-Ey-Rvm" secondAttribute="leading" id="gL3-kY-u1N"/>
-                            <constraint firstItem="sxs-Sp-DMn" firstAttribute="centerX" secondItem="ahX-Av-IfB" secondAttribute="centerX" id="kAO-Uz-WD8"/>
+                            <constraint firstItem="8sS-YL-U0f" firstAttribute="centerX" secondItem="ahX-Av-IfB" secondAttribute="centerX" id="GTX-3g-qo4"/>
+                            <constraint firstItem="8sS-YL-U0f" firstAttribute="centerY" secondItem="ahX-Av-IfB" secondAttribute="centerY" id="vKy-lV-vW8"/>
                         </constraints>
                     </view>
                 </viewController>

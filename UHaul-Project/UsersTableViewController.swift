@@ -54,14 +54,7 @@ class UsersTableViewController: UITableViewController {
         cell.detailTextLabel?.text = (user.street! + " " + user.suite! + " " + user.zipcode! + " " + user.city!)
         return cell
     }
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let indexPath = tableView.indexPathForSelectedRow?.row
-//        let currentCell = usersList[indexPath!].id
-//        valueToPass = currentCell
-//        performSegue(withIdentifier: "showUserPosts", sender: self)
-//        
-//        
-//    }
+
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -71,10 +64,12 @@ class UsersTableViewController: UITableViewController {
             let detailViewController = segue.destination as! PostsTableViewController
             let indexPath = self.tableView.indexPathForSelectedRow
              let userTopost = self.usersList[(indexPath?.row)!].id
-            detailViewController.detailUserPost? = "\(userTopost)"
+            detailViewController.detailUserPost? = userTopost
             
         }
     }
+    
+    
 
 
 }

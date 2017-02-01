@@ -17,6 +17,7 @@
 		54722F871E3FCDC0005980B2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54722F861E3FCDC0005980B2 /* User.swift */; };
 		54722F8D1E3FDAE0005980B2 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54722F8C1E3FDAE0005980B2 /* UserController.swift */; };
 		54722FEF1E4019AF005980B2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54722FEE1E4019AF005980B2 /* Post.swift */; };
+		54722FF71E407742005980B2 /* ViewAndAddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54722FF61E407742005980B2 /* ViewAndAddPostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		54722F861E3FCDC0005980B2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		54722F8C1E3FDAE0005980B2 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		54722FEE1E4019AF005980B2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = ../Post.swift; sourceTree = "<group>"; };
+		54722FF61E407742005980B2 /* ViewAndAddPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAndAddPostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				54722F751E3FCABB005980B2 /* Assets.xcassets */,
 				54722F771E3FCABB005980B2 /* LaunchScreen.storyboard */,
 				54722F7A1E3FCABB005980B2 /* Info.plist */,
+				54722FF61E407742005980B2 /* ViewAndAddPostViewController.swift */,
 			);
 			path = "UHaul-Project";
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				54722FEF1E4019AF005980B2 /* Post.swift in Sources */,
 				54722F6F1E3FCABB005980B2 /* AppDelegate.swift in Sources */,
 				54722F8D1E3FDAE0005980B2 /* UserController.swift in Sources */,
+				54722FF71E407742005980B2 /* ViewAndAddPostViewController.swift in Sources */,
 				54722F871E3FCDC0005980B2 /* User.swift in Sources */,
 				54722F831E3FCBF7005980B2 /* NetworkController.swift in Sources */,
 			);

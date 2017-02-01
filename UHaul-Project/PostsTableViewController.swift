@@ -12,7 +12,7 @@ class PostsTableViewController: UITableViewController {
     var userPosts:Post?
     var allUserPosts = [Post]()
     var postIdentifier: Post?
-    var detailUserPost: String?
+    var detailUserPost: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
