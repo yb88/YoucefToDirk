@@ -10,9 +10,7 @@ import UIKit
 
 class ViewAndAddPostViewController: UIViewController {
 
-    @IBOutlet weak var bodyTextView: UITextView!
-    @IBOutlet weak var titleTextField: UITextField!
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -24,6 +22,7 @@ class ViewAndAddPostViewController: UIViewController {
     }
     
     @IBAction func addPostButtonTapped(_ sender: Any) {
+        UserController.postRequest()
         
     }
 

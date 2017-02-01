@@ -68,16 +68,16 @@
 			children = (
 				54722F6E1E3FCABB005980B2 /* AppDelegate.swift */,
 				54722FEE1E4019AF005980B2 /* Post.swift */,
-				54722F721E3FCABB005980B2 /* Main.storyboard */,
 				54722F861E3FCDC0005980B2 /* User.swift */,
 				54722F841E3FCC52005980B2 /* PostsTableViewController.swift */,
 				54722F801E3FCBE9005980B2 /* UsersTableViewController.swift */,
 				54722F821E3FCBF7005980B2 /* NetworkController.swift */,
 				54722F8C1E3FDAE0005980B2 /* UserController.swift */,
+				54722FF61E407742005980B2 /* ViewAndAddPostViewController.swift */,
+				54722F721E3FCABB005980B2 /* Main.storyboard */,
 				54722F751E3FCABB005980B2 /* Assets.xcassets */,
 				54722F771E3FCABB005980B2 /* LaunchScreen.storyboard */,
 				54722F7A1E3FCABB005980B2 /* Info.plist */,
-				54722FF61E407742005980B2 /* ViewAndAddPostViewController.swift */,
 			);
 			path = "UHaul-Project";
 			sourceTree = "<group>";

@@ -70,48 +70,22 @@ class UserController {
             "title" : " beach" as AnyObject,
             "body" : "ocean is good" as AnyObject
         ]
+        let json: Data
         do {
-            let posted = try JSONSerialization.data(withJSONObject: newPost, options: [])
-            url.httpBody = posted
-            let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-                guard let data = data else {
-                    print("Error Data")
-                    return
-                }
-                guard error == nil else {
-                    return
-                }
-                
-            })
-            
-            
+            json = try JSONSerialization.data(withJSONObject: newPost, options: [])
+            url.httpBody = json
         } catch {
-            print(error.localizedDescription)
+            print("error setting json data")
             return
         }
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        NetworkController.dataAtURLRequest(url: url) { (data) in
             guard let data = data else {
-                print("error converting the json object into model data")
                 return
             }
-            // send json result
-            do {
-                guard let newData = try JSONSerialization.data(withJSONObject: data, options: []) as? [String: Any] else {
-                    print("problem getting json data as a dictionary we can use")
-                    return
-                }
-                guard let userID = newData["id"] as? Int else {
-                    print("problem getting the userID")
-                }
-                print("successfully getting id: \(userID)")
-            } catch {
-                print(error.localizedDescription)
-                
-            }
-            
+            print("successfully setting the data: \(newPost)")
             
         }
-        task.resume()
+        
         
     }
     // PUT request

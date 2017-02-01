@@ -15,6 +15,7 @@ class PostsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // getting posts
         UserController.getPosts { (posts) in
             self.allUserPosts = posts
             self.tableView.reloadData()
@@ -34,6 +35,7 @@ class PostsTableViewController: UITableViewController {
     }
     
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postIdentifier", for: indexPath)
         let singlePost = allUserPosts[indexPath.row]
@@ -43,7 +45,9 @@ class PostsTableViewController: UITableViewController {
         
         return cell
     }
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     
     /*
      // Override to support conditional editing of the table view.

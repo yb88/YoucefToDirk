@@ -28,4 +28,16 @@ class NetworkController {
         }
         dataTask.resume()
     }
+    
+    static func dataAtURLRequest(url: URLRequest, completion: @escaping(_ data: NSData?) -> Void) {
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!)
+                completion(nil)
+            } else {
+                completion(data as NSData?)
+            }
+        }
+        dataTask.resume()
+    }
 }
