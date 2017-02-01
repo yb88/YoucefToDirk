@@ -59,7 +59,7 @@ class UserController {
         }
     }
     
-    // create new post
+    // POST create new post request
     
     static func postRequest() {
         let enpointURL = URL(string:"http://jsonplaceholder.typicode.com/posts")
@@ -114,7 +114,47 @@ class UserController {
         task.resume()
         
     }
-    
+    // PUT request
+    func putRequest() {
+        let url = URL(string: "http://jsonplaceholder.typicode.com/posts/1")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        let body: [String : Any] = [
+            "id" : 1,
+            "userId" : 1,
+            "title" : "put title",
+            "body" : "put detail body"
+        ]
+        do {
+            let data = try JSONSerialization.data(withJSONObject: body, options: [])
+            
+            request.httpBody = data
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+        let session = URLSession(configuration: .default)
+        session.dataTask(with: request, completionHandler: {(data: Data?, response: URLResponse?, error: Error?) in
+            if error != nil {
+                print("\(error)")
+            }
+            if data != nil {
+                print(data!)
+                
+                do {
+                    let jsonDictionary = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
+                    
+                    if let jsonData = jsonDictionary {
+                        print(jsonData)
+                    }
+                }
+                catch {
+                }
+            }
+            
+        }) .resume()
+    }
     // delete request
     static func delete() {
     let url = URL(string: UserController.endpoint)

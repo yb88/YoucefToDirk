@@ -9,16 +9,19 @@
 import UIKit
 
 class PostsTableViewController: UITableViewController {
-    var userPosts:Post?
+    var userPosts = [Post]()
     var allUserPosts = [Post]()
     var postIdentifier: Post?
-    var detailUserPost: Int?
+    var userId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       UserController.getPosts((detailUserPost)!) { (posts) in
-        self.allUserPosts = posts
-        self.tableView.reloadData()
+        UserController.getPosts(userId!) { (posts) in
+            self.tableView.reloadData()
+            self.allUserPosts = posts
+            self.userPosts = self.allUserPosts.filter({($0.id != nil)})
+            
+
         }
     }
     
@@ -37,7 +40,7 @@ class PostsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postIdentifier", for: indexPath)
-        let singlePost = allUserPosts[indexPath.row]
+        let singlePost = userPosts[indexPath.row]
         cell.textLabel?.text = singlePost.body
         cell.detailTextLabel?.text = singlePost.title
         

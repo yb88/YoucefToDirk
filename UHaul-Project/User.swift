@@ -18,6 +18,7 @@ class User {
     fileprivate let addressKey = "address"
     fileprivate let usernameKey = "username"
     fileprivate let idkey = "id"
+    
     var street: String?
     var suite: String?
     var city: String?
@@ -25,7 +26,6 @@ class User {
     var lat: String?
     var lng: String?
 
-    
     var username: String
     var id: Int
     init(username: String, id: Int, suite: String, street: String, zipcode: String, lat: String, lng: String, city: String) {

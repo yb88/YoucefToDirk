@@ -21,6 +21,7 @@ class UsersTableViewController: UITableViewController {
         UserController.getUsers { (users) in
             DispatchQueue.main.async {
                 self.usersList = users
+                self.usersList = self.usersList.sorted(by: {$0.0.username < $0.1.username})
                 self.tableView.reloadData()
                 print(self.usersList)
               
@@ -63,8 +64,8 @@ class UsersTableViewController: UITableViewController {
 //            guard let cell = sender as? UITableViewCell else { return }
             let detailViewController = segue.destination as! PostsTableViewController
             let indexPath = self.tableView.indexPathForSelectedRow
-             let userTopost = self.usersList[(indexPath?.row)!].id
-            detailViewController.detailUserPost? = userTopost
+             let userTopost = self.usersList[(indexPath?.row)!]
+              detailViewController.userId? = userTopost.id
             
         }
     }
