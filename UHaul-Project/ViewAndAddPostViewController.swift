@@ -25,7 +25,13 @@ class ViewAndAddPostViewController: UIViewController {
         UserController.postRequest()
         
     }
+    @IBAction func putButtontapped(_ sender: Any) {
+        UserController.putRequest()
+    }
 
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        UserController.delete()
+    }
     /*
     // MARK: - Navigation
 

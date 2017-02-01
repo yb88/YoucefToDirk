@@ -89,11 +89,11 @@ class UserController {
         
     }
     // PUT request
-    func putRequest() {
+    static func putRequest() {
         let url = URL(string: "http://jsonplaceholder.typicode.com/posts/1")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "PUT"
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        var requestUrl = URLRequest(url: url)
+        requestUrl.httpMethod = "PUT"
+        requestUrl.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         let body: [String : Any] = [
             "id" : 1,
             "userId" : 1,
@@ -103,46 +103,30 @@ class UserController {
         do {
             let data = try JSONSerialization.data(withJSONObject: body, options: [])
             
-            request.httpBody = data
+            requestUrl.httpBody = data
         }
         catch {
             print(error.localizedDescription)
         }
-        let session = URLSession(configuration: .default)
-        session.dataTask(with: request, completionHandler: {(data: Data?, response: URLResponse?, error: Error?) in
-            if error != nil {
-                print("\(error)")
+        NetworkController.dataAtURLRequest(url: requestUrl) { (data) in
+            guard let data = data else {
+                return
             }
-            if data != nil {
-                print(data!)
-                
-                do {
-                    let jsonDictionary = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
-                    
-                    if let jsonData = jsonDictionary {
-                        print(jsonData)
-                    }
-                }
-                catch {
-                }
-            }
-            
-        }) .resume()
+            print("successfully put data: \(data)")
+            print(body)
+        }
+        
     }
     // delete request
     static func delete() {
     let url = URL(string: UserController.endpoint)
     var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = "DELETE"
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        NetworkController.dataAtURLRequest(url: urlRequest) { (data) in
             guard let data = data else {
-                print("error in delete")
                 return
             }
-            print("successfully deleted")
+            print("successfully delete data: \(data)")
         }
-        task.resume()
-    
-    
     }
 }

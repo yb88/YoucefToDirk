@@ -124,18 +124,38 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sS-YL-U0f">
                                 <rect key="frame" x="124" y="318" width="127" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="127" id="7bI-JO-5Ul"/>
+                                    <constraint firstAttribute="width" constant="127" id="QJU-DL-U02"/>
                                 </constraints>
                                 <state key="normal" title="Add Post"/>
                                 <connections>
                                     <action selector="addPostButtonTapped:" destination="5RI-45-goI" eventType="touchUpInside" id="Eih-fr-mvX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="236-GI-Rb0">
+                                <rect key="frame" x="124" y="356" width="127" height="30"/>
+                                <state key="normal" title="Put"/>
+                                <connections>
+                                    <action selector="putButtontapped:" destination="5RI-45-goI" eventType="touchUpInside" id="i5T-eL-TAL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VpM-dU-6Gm">
+                                <rect key="frame" x="124" y="394" width="127" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="5RI-45-goI" eventType="touchUpInside" id="7ni-GU-Tfz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8sS-YL-U0f" firstAttribute="centerX" secondItem="ahX-Av-IfB" secondAttribute="centerX" id="GTX-3g-qo4"/>
-                            <constraint firstItem="8sS-YL-U0f" firstAttribute="centerY" secondItem="ahX-Av-IfB" secondAttribute="centerY" id="vKy-lV-vW8"/>
+                            <constraint firstItem="236-GI-Rb0" firstAttribute="top" secondItem="8sS-YL-U0f" secondAttribute="bottom" constant="8" symbolic="YES" id="3l8-i9-oWo"/>
+                            <constraint firstItem="VpM-dU-6Gm" firstAttribute="top" secondItem="236-GI-Rb0" secondAttribute="bottom" constant="8" symbolic="YES" id="853-xj-DMM"/>
+                            <constraint firstItem="8sS-YL-U0f" firstAttribute="centerY" secondItem="ahX-Av-IfB" secondAttribute="centerY" id="Ttt-gG-B43"/>
+                            <constraint firstItem="8sS-YL-U0f" firstAttribute="leading" secondItem="236-GI-Rb0" secondAttribute="leading" id="ZQ5-41-dN3"/>
+                            <constraint firstItem="236-GI-Rb0" firstAttribute="trailing" secondItem="VpM-dU-6Gm" secondAttribute="trailing" id="hHt-Vu-Vpr"/>
+                            <constraint firstItem="8sS-YL-U0f" firstAttribute="centerX" secondItem="ahX-Av-IfB" secondAttribute="centerX" id="lEy-9D-78c"/>
+                            <constraint firstItem="236-GI-Rb0" firstAttribute="leading" secondItem="VpM-dU-6Gm" secondAttribute="leading" id="lM9-G9-WTC"/>
+                            <constraint firstItem="8sS-YL-U0f" firstAttribute="trailing" secondItem="236-GI-Rb0" secondAttribute="trailing" id="sUP-bU-iam"/>
                         </constraints>
                     </view>
                 </viewController>
