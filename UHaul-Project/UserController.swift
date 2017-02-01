@@ -9,7 +9,7 @@
 import Foundation
 class UserController {
     static let endpoint = "http://jsonplaceholder.typicode.com/posts/"
-
+    
     static let  baseURLString = "http://jsonplaceholder.typicode.com/users"
     static let baseUrl = NSURL(string: baseURLString)
     static func getUsers(completion: @escaping(_ users: [User]) -> Void) {
@@ -26,8 +26,6 @@ class UserController {
                     if let newUser = User(jsonDictionary: userDictionary as! [String : AnyObject]) {
                         users.append(newUser)
                     }
-                    
-                    
                 }
                 completion(users)
             } else {
@@ -83,10 +81,7 @@ class UserController {
                 return
             }
             print("successfully setting the data: \(newPost)")
-            
         }
-        
-        
     }
     // PUT request
     static func putRequest() {
@@ -119,8 +114,8 @@ class UserController {
     }
     // delete request
     static func delete() {
-    let url = URL(string: UserController.endpoint)
-    var urlRequest = URLRequest(url: url!)
+        let url = URL(string: UserController.endpoint)
+        var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = "DELETE"
         NetworkController.dataAtURLRequest(url: urlRequest) { (data) in
             guard let data = data else {
