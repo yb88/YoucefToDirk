@@ -80,7 +80,7 @@ class UserController {
             guard let data = data else {
                 return
             }
-            print("successfully setting the data: \(newPost)")
+            print("successfully setting the data: \(data)  \(newPost)")
         }
     }
     // PUT request
