@@ -36,8 +36,8 @@ class UserController {
             
         }
     }
-    static func getPosts(_ userId: Int,completion: @escaping(_ posts: [Post]) -> Void) {
-        let url = NetworkController.searchByUserID(userId)
+    static func getPosts(_ completion: @escaping(_ posts: [Post]) -> Void) {
+        let url = NetworkController.searchByUserID()
         NetworkController.dataAtURL(url: url as NSURL) { (data) in
             guard let data = data else {return}
             guard let json = try? JSONSerialization.jsonObject(with: data as Data, options: .allowFragments) else {

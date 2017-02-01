@@ -9,9 +9,9 @@
 import Foundation
 
 class NetworkController {
-    static let baseURLString = "http://jsonplaceholder.typicode.com/posts?userId="
-    static func searchByUserID(_ userId: Int) -> URL {
-        return URL(string: NetworkController.baseURLString + "\(userId)")!
+    static let baseURLString = "http://jsonplaceholder.typicode.com/posts/"
+    static func searchByUserID() -> URL {
+        return URL(string: NetworkController.baseURLString )!
     }
 
     

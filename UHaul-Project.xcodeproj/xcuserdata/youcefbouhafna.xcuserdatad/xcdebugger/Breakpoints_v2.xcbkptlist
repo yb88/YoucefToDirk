@@ -67,53 +67,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UHaul-Project/UserController.swift"
-            timestampString = "507609432.718084"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "getUsers(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static UHaul_Project.UserController.getUsers (completion : (Swift.Array&lt;UHaul_Project.User&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "UHaul-Project"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/youcefbouhafna/Downloads/DirkToYoucefTask-master%202/UHaul-Project/UserController.swift"
-                  timestampString = "507610116.790515"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "188">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static UHaul_Project.UserController.(getUsers (completion : (Swift.Array&lt;UHaul_Project.User&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "UHaul-Project"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/youcefbouhafna/Downloads/DirkToYoucefTask-master%202/UHaul-Project/UserController.swift"
-                  timestampString = "507610116.792664"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "1196">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
